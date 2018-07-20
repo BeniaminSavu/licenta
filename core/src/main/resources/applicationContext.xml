@@ -1,0 +1,47 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+ http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+ http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+ http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd 
+ http://www.springframework.org/schema/util	http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<import resource="classpath:business.xml" />
+
+	<context:annotation-config />
+	<context:component-scan base-package="ace.ucv.licenta.core" />
+
+	<bean id="mainWindow" class="ace.ucv.licenta.core.MainWindow"
+		init-method="init"></bean>
+
+	<bean id="professorPanelPresenter" class="ace.ucv.licenta.core.ui.ProfessorPanelPresenter"></bean>
+	<bean id="professorPanel" class="ace.ucv.licenta.core.ui.ProfessorPanel"></bean>
+	<bean id="mainWindowListener" class="ace.ucv.licenta.core.MainWindow"></bean>
+
+	<bean id="loginPresenter" class="ace.ucv.licenta.core.ui.security.LoginPanelPresenter"></bean>
+	<bean id="loginListener" class="ace.ucv.licenta.core.ui.security.LoginPanelPresenter"></bean>
+	<bean id="loginPanel" class="ace.ucv.licenta.core.ui.security.LoginPanel"></bean>
+
+	<bean id="registerPanel" class="ace.ucv.licenta.core.ui.security.RegisterPanel"></bean>
+	<bean id="registerListener" class="ace.ucv.licenta.core.ui.security.RegisterPanelPresenter"></bean>
+	<bean id="registerPresenter" class="ace.ucv.licenta.core.ui.security.RegisterPanelPresenter"></bean>
+
+	<bean id="studentPanel" class="ace.ucv.licenta.core.ui.StudentPanel"></bean>
+	<bean id="studentPresenter" class="ace.ucv.licenta.core.ui.StudentPanelPresenter"></bean>
+	
+	<bean id="questionsPanel" class="ace.ucv.licenta.core.ui.QuestionsPanel"></bean>
+	<bean id="questionsPanelPresenter" class="ace.ucv.licenta.core.ui.QuestionsPanelPresenter"></bean>
+	
+	<bean id="addPanel" class="ace.ucv.licenta.core.ui.questions.AddPanel"></bean>
+	<bean id="addPanelPresenter" class="ace.ucv.licenta.core.ui.questions.AddPanelPresenter"></bean>
+	<bean id="editPanel" class="ace.ucv.licenta.core.ui.questions.EditPanel"></bean>
+	<bean id="editPanelPresenter" class="ace.ucv.licenta.core.ui.questions.EditPanelPresenter"></bean>
+	<bean id="removePanel" class="ace.ucv.licenta.core.ui.questions.RemovePanel"></bean>
+	<bean id="removePanelPresenter" class="ace.ucv.licenta.core.ui.questions.RemovePanelPresenter"></bean>
+
+</beans>
